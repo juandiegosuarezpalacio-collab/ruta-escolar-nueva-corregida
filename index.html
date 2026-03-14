@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruta Escolar Inteligente</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>🚌 Ruta Escolar</h1>
+        <p>Versión corregida para prueba real en celular y PC.</p>
+      </div>
+      <div class="topbar-badge" id="versionBadge">V5</div>
+    </header>
+
+    <section class="panel panel-info">
+      <div class="info-card">
+        <span class="label">Ruta activa</span>
+        <strong id="routeName">Bachillerato 1</strong>
+      </div>
+      <div class="info-card">
+        <span class="label">Barrio actual</span>
+        <strong id="currentBarrioLabel">Turbay Ayala</strong>
+      </div>
+      <div class="info-card">
+        <span class="label">Canal activo</span>
+        <strong id="channelLabel">Automático</strong>
+      </div>
+      <div class="info-card">
+        <span class="label">Progreso</span>
+        <strong id="progressLabel">Estudiante 1 de 3</strong>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Rutas</h2>
+      <div class="route-grid" id="routeTabs"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Modo conductor</h2>
+      <div class="field">
+        <label for="barrioSelect">Barrio actual</label>
+        <select id="barrioSelect"></select>
+      </div>
+      <div class="field">
+        <label for="sendMode">Canal de WhatsApp</label>
+        <select id="sendMode">
+          <option value="auto">Automático</option>
+          <option value="app">WhatsApp móvil</option>
+          <option value="web">WhatsApp Web</option>
+        </select>
+      </div>
+      <div class="help" id="deviceHelp">La página detectará si estás en celular o PC.</div>
+      <div class="actions-grid">
+        <button class="btn primary" id="btnAlistamiento">Ruta alistándose</button>
+        <button class="btn light" id="btnBarrio">Avisar barrio</button>
+        <button class="btn success" id="btnColegio">Llegó al colegio</button>
+        <button class="btn accent" id="btnSiguiente">Siguiente estudiante</button>
+      </div>
+      <div class="status-box" id="statusText">Cargando datos...</div>
+    </section>
+
+    <section class="panel">
+      <h2>Mensaje generado</h2>
+      <div class="preview" id="preview"></div>
+      <div class="actions-wrap">
+        <button class="btn success" id="btnEnviar">Enviar WhatsApp</button>
+        <button class="btn warning" id="btnCopiar">Copiar mensaje</button>
+        <button class="btn dark" id="btnEnlace">Ver enlace</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Orden de recogida</h2>
+        <input id="searchStudent" type="search" placeholder="Buscar estudiante o barrio" />
+      </div>
+      <div id="studentList" class="student-list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Diagnóstico IA</h2>
+      <div id="diagnostics" class="diagnostics"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Bandeja</h2>
+        <button class="btn danger small" id="btnLimpiarBandeja">Limpiar</button>
+      </div>
+      <div id="tray" class="tray"></div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
